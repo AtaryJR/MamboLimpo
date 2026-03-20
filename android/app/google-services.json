@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1054330765036",
+    "project_id": "mambolimpo-2eedd",
+    "storage_bucket": "mambolimpo-2eedd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054330765036:android:d4ffe10d99895e86496fc9",
+        "android_client_info": {
+          "package_name": "com.ataryjr.mambolimpo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1054330765036-a8ulq0819216t0qb9re99vuk65eavdu7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlUhPM0NjnTOIgqxvYi7ncgc1-ZNtzOq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1054330765036-a8ulq0819216t0qb9re99vuk65eavdu7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

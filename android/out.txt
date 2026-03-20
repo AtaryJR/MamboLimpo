@@ -1,0 +1,112 @@
+> Task :gradle:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :gradle:compileKotlin UP-TO-DATE
+> Task :gradle:compileJava NO-SOURCE
+> Task :gradle:compileGroovy NO-SOURCE
+> Task :gradle:pluginDescriptors UP-TO-DATE
+> Task :gradle:processResources UP-TO-DATE
+> Task :gradle:classes UP-TO-DATE
+> Task :gradle:jar UP-TO-DATE
+
+> Task :app:signingReport
+Variant: debug
+Config: debug
+Store: C:\Users\YoniceZua\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 3D:77:2B:E9:0B:89:A5:60:2F:36:F7:4E:7D:C2:73:3B
+SHA1: E4:F9:A4:3B:A4:71:12:E6:9B:68:F4:CC:B5:6F:FF:A5:3F:33:A0:F5
+SHA-256: 97:E2:DF:D3:C7:8D:FB:3C:52:4F:6E:C1:FA:EF:10:F9:67:EC:08:A9:8D:B1:CB:92:D6:2D:45:0F:FB:B6:4D:27
+Valid until: sexta-feira, 12 de novembro de 2055
+----------
+Variant: release
+Config: debug
+Store: C:\Users\YoniceZua\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 3D:77:2B:E9:0B:89:A5:60:2F:36:F7:4E:7D:C2:73:3B
+SHA1: E4:F9:A4:3B:A4:71:12:E6:9B:68:F4:CC:B5:6F:FF:A5:3F:33:A0:F5
+SHA-256: 97:E2:DF:D3:C7:8D:FB:3C:52:4F:6E:C1:FA:EF:10:F9:67:EC:08:A9:8D:B1:CB:92:D6:2D:45:0F:FB:B6:4D:27
+Valid until: sexta-feira, 12 de novembro de 2055
+----------
+Variant: profile
+Config: debug
+Store: C:\Users\YoniceZua\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 3D:77:2B:E9:0B:89:A5:60:2F:36:F7:4E:7D:C2:73:3B
+SHA1: E4:F9:A4:3B:A4:71:12:E6:9B:68:F4:CC:B5:6F:FF:A5:3F:33:A0:F5
+SHA-256: 97:E2:DF:D3:C7:8D:FB:3C:52:4F:6E:C1:FA:EF:10:F9:67:EC:08:A9:8D:B1:CB:92:D6:2D:45:0F:FB:B6:4D:27
+Valid until: sexta-feira, 12 de novembro de 2055
+----------
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\YoniceZua\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 3D:77:2B:E9:0B:89:A5:60:2F:36:F7:4E:7D:C2:73:3B
+SHA1: E4:F9:A4:3B:A4:71:12:E6:9B:68:F4:CC:B5:6F:FF:A5:3F:33:A0:F5
+SHA-256: 97:E2:DF:D3:C7:8D:FB:3C:52:4F:6E:C1:FA:EF:10:F9:67:EC:08:A9:8D:B1:CB:92:D6:2D:45:0F:FB:B6:4D:27
+Valid until: sexta-feira, 12 de novembro de 2055
+----------
+
+> Task :cloud_firestore:signingReport
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\YoniceZua\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 3D:77:2B:E9:0B:89:A5:60:2F:36:F7:4E:7D:C2:73:3B
+SHA1: E4:F9:A4:3B:A4:71:12:E6:9B:68:F4:CC:B5:6F:FF:A5:3F:33:A0:F5
+SHA-256: 97:E2:DF:D3:C7:8D:FB:3C:52:4F:6E:C1:FA:EF:10:F9:67:EC:08:A9:8D:B1:CB:92:D6:2D:45:0F:FB:B6:4D:27
+Valid until: sexta-feira, 12 de novembro de 2055
+----------
+
+> Task :firebase_app_check:signingReport
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\YoniceZua\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 3D:77:2B:E9:0B:89:A5:60:2F:36:F7:4E:7D:C2:73:3B
+SHA1: E4:F9:A4:3B:A4:71:12:E6:9B:68:F4:CC:B5:6F:FF:A5:3F:33:A0:F5
+SHA-256: 97:E2:DF:D3:C7:8D:FB:3C:52:4F:6E:C1:FA:EF:10:F9:67:EC:08:A9:8D:B1:CB:92:D6:2D:45:0F:FB:B6:4D:27
+Valid until: sexta-feira, 12 de novembro de 2055
+----------
+
+> Task :firebase_auth:signingReport
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\YoniceZua\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 3D:77:2B:E9:0B:89:A5:60:2F:36:F7:4E:7D:C2:73:3B
+SHA1: E4:F9:A4:3B:A4:71:12:E6:9B:68:F4:CC:B5:6F:FF:A5:3F:33:A0:F5
+SHA-256: 97:E2:DF:D3:C7:8D:FB:3C:52:4F:6E:C1:FA:EF:10:F9:67:EC:08:A9:8D:B1:CB:92:D6:2D:45:0F:FB:B6:4D:27
+Valid until: sexta-feira, 12 de novembro de 2055
+----------
+
+> Task :firebase_core:signingReport
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\YoniceZua\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 3D:77:2B:E9:0B:89:A5:60:2F:36:F7:4E:7D:C2:73:3B
+SHA1: E4:F9:A4:3B:A4:71:12:E6:9B:68:F4:CC:B5:6F:FF:A5:3F:33:A0:F5
+SHA-256: 97:E2:DF:D3:C7:8D:FB:3C:52:4F:6E:C1:FA:EF:10:F9:67:EC:08:A9:8D:B1:CB:92:D6:2D:45:0F:FB:B6:4D:27
+Valid until: sexta-feira, 12 de novembro de 2055
+----------
+
+> Task :firebase_storage:signingReport
+Variant: debugAndroidTest
+Config: debug
+Store: C:\Users\YoniceZua\.android\debug.keystore
+Alias: AndroidDebugKey
+MD5: 3D:77:2B:E9:0B:89:A5:60:2F:36:F7:4E:7D:C2:73:3B
+SHA1: E4:F9:A4:3B:A4:71:12:E6:9B:68:F4:CC:B5:6F:FF:A5:3F:33:A0:F5
+SHA-256: 97:E2:DF:D3:C7:8D:FB:3C:52:4F:6E:C1:FA:EF:10:F9:67:EC:08:A9:8D:B1:CB:92:D6:2D:45:0F:FB:B6:4D:27
+Valid until: sexta-feira, 12 de novembro de 2055
+----------
+
+[Incubating] Problems report is available at: file:///C:/Users/YoniceZua/StudioProjects/mambolimpo/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 5s
+10 actionable tasks: 6 executed, 4 up-to-date

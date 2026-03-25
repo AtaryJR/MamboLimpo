@@ -9,10 +9,10 @@ class MockOrderRepository implements IOrderRepository {
     OrderEntity(
       id: 'ORD-001',
       clientId: 'CLI-123',
-      employeeId: 'EMP-999', // Funcionário entregador fake "EMP-999"
+      employeeId: 'EMP-999', // Funcionário fake para testes
       serviceName: 'Lavagem Normal',
       pickupAddress: 'Rua das Pedras, 123',
-      scheduledDate: DateTime.now().add(const Duration(hours: 2)),
+      scheduledDate: DateTime.now().add(const Duration(hours: 1)),
       totalAmount: 25.0,
       status: OrderStatus.scheduled,
     ),
@@ -22,9 +22,52 @@ class MockOrderRepository implements IOrderRepository {
       employeeId: 'EMP-999',
       serviceName: 'Passadoria',
       pickupAddress: 'Avenida de Luanda, 400',
-      scheduledDate: DateTime.now().add(const Duration(hours: 4)),
+      scheduledDate: DateTime.now().add(const Duration(hours: 3)),
       totalAmount: 15.0,
-      status: OrderStatus.pickedUp, // Já recolhido!
+      status: OrderStatus.scheduled,
+    ),
+    // Novo: Mais uma recolha para hoje
+    OrderEntity(
+      id: 'ORD-003',
+      clientId: 'CLI-789',
+      employeeId: 'EMP-999',
+      serviceName: 'Lavagem a Seco',
+      pickupAddress: 'Bairro Operário, Bloco B, Apt 12',
+      scheduledDate: DateTime.now().add(const Duration(hours: 5)),
+      totalAmount: 45.0,
+      status: OrderStatus.scheduled,
+    ),
+    // Pedidos Prontos para Entrega
+    OrderEntity(
+      id: 'ORD-004',
+      clientId: 'CLI-101',
+      employeeId: 'EMP-999',
+      serviceName: 'Serviço Express',
+      pickupAddress: 'Talatona, Condomínio Girassol',
+      scheduledDate: DateTime.now().subtract(const Duration(hours: 2)),
+      totalAmount: 60.0,
+      status: OrderStatus.ready, // Pronto para ser entregue!
+    ),
+    OrderEntity(
+      id: 'ORD-005',
+      clientId: 'CLI-202',
+      employeeId: 'EMP-999',
+      serviceName: 'Lavagem + Engomagem',
+      pickupAddress: 'Viana, Estalagem, Rua 4',
+      scheduledDate: DateTime.now().subtract(const Duration(hours: 1)),
+      totalAmount: 35.0,
+      status: OrderStatus.ready,
+    ),
+    // Pedidos já Concluídos (para a aba de Histórico)
+    OrderEntity(
+      id: 'ORD-006',
+      clientId: 'CLI-303',
+      employeeId: 'EMP-999',
+      serviceName: 'Lavagem Normal',
+      pickupAddress: 'Samba, Estrada Direita',
+      scheduledDate: DateTime.now().subtract(const Duration(days: 1)),
+      totalAmount: 25.0,
+      status: OrderStatus.delivered,
     ),
   ];
 

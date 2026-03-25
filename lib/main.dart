@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart'; // Delegados de localização
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/date_symbol_data_local.dart'; // Para inicializar datas em PT
 import 'core/routes/app_router.dart';
 
 // Ponto de entrada principal do aplicativo
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  // Inicializa a formatação de datas para Português
+  await initializeDateFormatting('pt_BR', null);
+
   runApp(
     // ProviderScope é necessário na raiz do app para o Riverpod fornecer o estado global
     const ProviderScope(
@@ -37,6 +44,18 @@ class MamboLimpoApp extends ConsumerWidget {
       ),
       // Configuração extraída do GoRouter
       routerConfig: goRouter,
+      
+      // --- Configurações de Localização (Português) ---
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('pt', 'BR'), // Português Brasil
+        Locale('pt', 'PT'), // Português Portugal
+      ],
+      locale: const Locale('pt', 'BR'), // Define PT-BR como padrão
     );
   }
 }

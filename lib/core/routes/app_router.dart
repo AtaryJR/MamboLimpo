@@ -7,6 +7,11 @@ import '../../presentation/client/views/schedule_client_page.dart';
 import '../../presentation/client/views/item_selection_page.dart';
 import '../../presentation/client/views/basket_page.dart';
 import '../../presentation/admin/views/dashboard_admin_page.dart';
+import '../../domain/entities/basket_order.dart';
+import '../../presentation/client/views/profile_client_page.dart';
+import '../../presentation/client/views/edit_profile_page.dart';
+import '../../presentation/employee/views/task_detail_page.dart';
+import '../../domain/entities/order_entity.dart';
 
 // Provider global para injetar o router (GoRouter) na raiz da aplicação
 final appRouterProvider = Provider<GoRouter>((ref) {
@@ -36,10 +41,14 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           final subtotal = extra['subtotal'] as int? ?? 0;
           final serviceType = extra['serviceType'] as String? ?? 'Lavagem Normal';
           final includeIroning = extra['includeIroning'] as bool? ?? false;
+          // Adiciona a lista de itens para o resumo final (opcional, para persistência futura)
+          final items = extra['items'] as List<BasketItem>? ?? [];
+          
           return ScheduleClientPage(
             subtotal: subtotal,
             serviceType: serviceType,
             includeIroning: includeIroning,
+            items: items,
           );
         },
       ),
@@ -47,11 +56,26 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/client-basket',
         builder: (context, state) => const BasketPage(),
       ),
+      GoRoute(
+        path: '/client-profile',
+        builder: (context, state) => const ProfileClientPage(),
+      ),
+      GoRoute(
+        path: '/client-edit-profile',
+        builder: (context, state) => const EditProfilePage(),
+      ),
 
       // ROTAS DA ÁREA DO FUNCIONÁRIO
       GoRoute(
         path: '/employee-home',
         builder: (context, state) => const HomeEmployeePage(),
+      ),
+      GoRoute(
+        path: '/employee-task-detail',
+        builder: (context, state) {
+          final order = state.extra as OrderEntity;
+          return TaskDetailPage(order: order);
+        },
       ),
 
       // ROTAS DA ÁREA DO ADMIN

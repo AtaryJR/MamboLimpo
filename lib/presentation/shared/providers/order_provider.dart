@@ -4,13 +4,13 @@ import '../../../domain/repositories/order_repository_interface.dart';
 import '../../../domain/entities/order_entity.dart';
 
 // Provider principal para a Injeção de Dependências.
-// Ele injeta a versão Mock. Futuramente para mudar para Firebase, basta mudar "MockOrderRepository" para "FirebaseOrderRepository". Nenhuma tela notará a diferença.
 final orderRepositoryProvider = Provider<IOrderRepository>((ref) {
   return MockOrderRepository();
 });
 
-// Este provider busca de forma assíncrona todas as tarefas de um funcionário fixo (ex: EMP-999)
-final employeeOrdersProvider = FutureProvider<List<OrderEntity>>((ref) async {
+// Este provider busca de forma assíncrona todas as tarefas de um funcionário fixo.
+// Usamos .family para permitir passar o ID do funcionário como argumento.
+final employeeOrdersProvider = FutureProvider.family<List<OrderEntity>, String>((ref, employeeId) async {
   final repo = ref.watch(orderRepositoryProvider);
-  return repo.getOrdersForEmployee('EMP-999');
+  return repo.getOrdersForEmployee(employeeId);
 });

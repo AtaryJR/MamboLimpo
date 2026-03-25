@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../widgets/promo_card.dart';
 import '../widgets/service_card.dart';
+import '../widgets/client_bottom_nav_bar.dart';
 
 // Tela principal inicial para clientes: exibe o catálogo de serviços com design moderno
 class HomeClientPage extends StatelessWidget {
@@ -13,54 +14,8 @@ class HomeClientPage extends StatelessWidget {
       backgroundColor: Colors
           .grey
           .shade50, // Fundo levemente cinza para destacar os cartões brancos
-      // Navigation Bar Premium e Flutuante
-      bottomNavigationBar: Container(
-        margin: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(30),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.1),
-              blurRadius: 25,
-              offset: const Offset(0, 10),
-            ),
-          ],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(30),
-          child: BottomNavigationBar(
-            elevation: 0,
-            backgroundColor: Colors.white,
-            selectedItemColor: Theme.of(context).colorScheme.primary,
-            unselectedItemColor: Colors.grey.shade400,
-            showSelectedLabels: true,
-            showUnselectedLabels: false,
-            selectedLabelStyle: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 12,
-            ),
-            items: const [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home_rounded),
-                label: 'Início',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.shopping_basket_outlined),
-                label: 'Cesto',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person_rounded),
-                label: 'Perfil',
-              ),
-            ],
-            onTap: (index) {
-              // Navegação da barra inferior do cliente
-              if (index == 1) context.push('/client-basket');
-            },
-          ),
-        ),
-      ),
+      // Navigation Bar Premium e Flutuante (agora usando o widget compartilhado)
+      bottomNavigationBar: const ClientBottomNavBar(currentIndex: 0),
 
       body: Center(
         child: ConstrainedBox(

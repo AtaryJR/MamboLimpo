@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../domain/entities/laundry_item.dart';
+import '../../../domain/entities/basket_order.dart'; // Necessário para criar BasketItem
 import '../../../core/constants/mock_laundry_items.dart';
 import '../widgets/laundry_item_card.dart';
 
@@ -181,7 +182,9 @@ class _ItemSelectionPageState extends State<ItemSelectionPage> {
                             activeTrackColor: Theme.of(
                               context,
                             ).colorScheme.primary.withValues(alpha: 0.5),
-                            activeColor: Theme.of(context).colorScheme.primary,
+                            activeThumbColor: Theme.of(
+                              context,
+                            ).colorScheme.primary,
                             value: includeIroning,
                             onChanged: (bool value) {
                               setState(() {
@@ -203,7 +206,9 @@ class _ItemSelectionPageState extends State<ItemSelectionPage> {
                     return LaundryItemCard(
                       name: item.name,
                       description: item.description,
-                      price: _calculateItemPrice(item.price), // Preço já computado
+                      price: _calculateItemPrice(
+                        item.price,
+                      ), // Preço já computado
                       icon: item.icon,
                       emoji: item.emoji, // Emoji coerente com o Cesto
                       quantity: item.quantity,
@@ -280,12 +285,29 @@ class _ItemSelectionPageState extends State<ItemSelectionPage> {
                     child: ElevatedButton(
                       onPressed: subtotal > 0
                           ? () {
-                              // Passa o resumo financeiro e o serviço para o próximo ecrã
-                              context.push('/client-schedule', extra: {
-                                'subtotal': subtotal,
-                                'serviceType': widget.serviceType,
-                                'includeIroning': includeIroning,
-                              });
+                                // Filtra os itens selecionados e converte para BasketItem
+                                final selectedItems = items
+                                    .where((i) => i.quantity > 0)
+                                    .map(
+                                      (i) => BasketItem(
+                                        name: i.name,
+                                        quantity: i.quantity,
+                                        unitPrice: _calculateItemPrice(i.price),
+                                        emoji: i.emoji,
+                                      ),
+                                    )
+                                    .toList();
+
+                                // Passa o resumo financeiro, serviço e itens para o próximo ecrã
+                                context.push(
+                                  '/client-schedule',
+                                  extra: {
+                                    'subtotal': subtotal,
+                                    'serviceType': widget.serviceType,
+                                    'includeIroning': includeIroning,
+                                    'items': selectedItems,
+                                  },
+                                );
                             }
                           : null, // Desabilita o botão se o cesto estiver vazio
                       style: ElevatedButton.styleFrom(
